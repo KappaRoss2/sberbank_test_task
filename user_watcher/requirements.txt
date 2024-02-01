@@ -1,0 +1,4 @@
+psycopg2-binary==2.9.9
+Django==4.2.9
+djangorestframework==3.14.0
+tldextract==5.1.1

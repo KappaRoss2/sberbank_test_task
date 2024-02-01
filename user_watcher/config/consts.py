@@ -1,0 +1,1 @@
+SUCCESS_STATUS = 'ok'
