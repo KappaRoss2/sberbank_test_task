@@ -4,7 +4,7 @@ services:
 
   server:
     restart: always
-    command: /bin/sh -c "wait-for-it primarydb:5432 -- /bin/sh config/start-server.sh"
+    command: /bin/sh config/start-server.sh
 
     build:
       context: ../user_watcher
