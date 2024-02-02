@@ -4,7 +4,7 @@ services:
 
   server:
     restart: always
-    command: /bin/sh config/start-server.sh
+    command: /bin/sh -c "wait-for-it primarydb:5432 -- /bin/sh config/start-server.sh"
 
     build:
       context: ../user_watcher
@@ -17,7 +17,6 @@ services:
       DB_USER: compose-postgres-user
       DB_PASSWORD: compose-postgres
       DB_PORT: 5432
-      DJANGO_SECRET_KEY: 'django-insecure-ip_i#sx5&#0-rfnzw9j#1rtcl*ug54dgxwl05y+*=(vq#$dmhj'
     
     volumes:
       - ../user_watcher:/usr/src/app
